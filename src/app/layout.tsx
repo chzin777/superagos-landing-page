@@ -23,10 +23,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }} />
         {/* End Google Tag Manager */}
         
-        <title>Workshop Inovação & Eficiência em Hotelaria</title>
+  <title>HIGICON - R3</title>
         <meta
           name="description"
-          content="Inscreva-se no nosso simpósio e descubra como transformar seus processos na hotelaria."
+          content="Descubra soluções inovadoras com a HIGICON."
         />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

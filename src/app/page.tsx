@@ -6,22 +6,10 @@ import Form from '../components/Form';
 import Image from 'next/image';
 
 export default function Home() {
-  const scrollToForm = () => {
-    const formSection = document.getElementById('formulario');
-    if (formSection) {
-      formSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
-  // Mensagem padrão para WhatsApp quando não há dados do formulário
-  const defaultWhatsappMsg = encodeURIComponent(
-    `Olá, gostaria de saber mais sobre o Workshop de Inovação & Eficiência em Hotelaria.`
-  );
-
   return (
     <main className="min-h-screen w-full p-0 m-0">
-      {/* Section da imagem de fundo com altura reduzida */}
-      <section className="relative w-full h-[420px] md:h-[640px] flex items-center justify-center overflow-hidden">
+      {/* Section da imagem de fundo em tela cheia */}
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden">
         {/* Imagem de fundo escurecida */}
         <div className="absolute inset-0 w-full h-full">
           <Image
@@ -43,10 +31,31 @@ export default function Home() {
             className="drop-shadow-lg w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 mb-4"
             priority
           />
+          <h1 className="text-2xl md:text-3xl font-bold text-white mt-2 drop-shadow-lg">HIGICON <br /> Cadastre-se e fique por dentro das novidades!</h1>
+        </div>
+        
+        {/* Seta pulsante para baixo */}
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 z-20">
+          <div className="animate-bounce">
+            <svg 
+              className="w-8 h-8 text-white animate-pulse" 
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M19 14l-7 7m0 0l-7-7m7 7V3"
+              />
+            </svg>
+          </div>
         </div>
       </section>
 
       <section id="formulario" className="bg-[#f5f7fa] py-8">
+        <h2 className="text-2xl font-bold text-center mb-6 text-[#263165]">Faça seu cadastro e conheça nossas soluções!</h2>
         <Form />
       </section>
 
