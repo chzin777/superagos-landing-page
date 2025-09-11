@@ -156,14 +156,13 @@ export default function Form() {
           
           <label className="flex flex-col space-y-2">
             <span className="text-xs sm:text-sm md:text-base font-medium text-[#263165]">
-              CNPJ:<span className="text-red-500 ml-1">*</span>
+              CNPJ <span className="text-[#263165]/60 font-normal">(opcional)</span>
             </span>
             <input
               type="text"
               value={cnpj}
               onChange={e => setCnpj(e.target.value)}
-              placeholder="Digite o CNPJ da empresa"
-              required
+              placeholder="Digite o CNPJ da empresa (se tiver)"
               className="px-3 sm:px-4 py-2.5 sm:py-3 rounded-lg bg-[#f5f7fa] text-[#263165] border border-[#263165]/30 placeholder-[#263165]/60 text-sm sm:text-base outline-none focus:ring-2 focus:ring-[#009FE3] transition font-[Montserrat] w-full"
             />
           </label>
