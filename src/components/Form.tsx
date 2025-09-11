@@ -51,7 +51,7 @@ export default function Form() {
 
     const payload = {
       firstName,
-      lastName: lastName + ' - EVENTO',
+  lastName: lastName + ' - HIGICON',
       phone: telefone,
       empresa,
       cnpj,
