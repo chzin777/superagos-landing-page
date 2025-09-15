@@ -31,7 +31,7 @@ export default function Home() {
             className="drop-shadow-lg w-32 h-32 md:w-36 md:h-36 lg:w-40 lg:h-40 mb-4"
             priority
           />
-          <h1 className="text-2xl md:text-3xl font-bold text-white mt-2 drop-shadow-lg">HIGICON <br /> Cadastre-se e fique por dentro das novidades!</h1>
+          <h1 className="text-2xl md:text-3xl font-bold text-white mt-2 drop-shadow-lg">SUPERAGOS<br /> Cadastre-se e fique por dentro das novidades!</h1>
         </div>
         
         {/* Seta pulsante para baixo */}

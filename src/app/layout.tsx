@@ -23,10 +23,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         }} />
         {/* End Google Tag Manager */}
         
-  <title>HIGICON - R3</title>
+  <title>R3 - SUPERAGOS</title>
         <meta
           name="description"
-          content="Descubra soluções inovadoras com a HIGICON."
+          content="Descubra soluções inovadoras na SUPERAGOS."
         />
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
