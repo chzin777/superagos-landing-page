@@ -105,17 +105,6 @@ export default function Home() {
           <p className="text-white text-sm font-[Montserrat] text-center">
             © 2024 R3 Suprimentos. Todos os direitos reservados.
           </p>
-          <p className="text-white text-sm font-[Montserrat] text-center">
-            Desenvolvido por{' '}
-            <a 
-              href="https://www.linkedin.com/in/christofer-henrique-43366725b" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:text-[#009FE3] transition-colors duration-200"
-            >
-              Christofer Henrique
-            </a>
-          </p>
         </div>
       </footer>
 

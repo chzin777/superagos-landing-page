@@ -1,10 +1,10 @@
 'use client';
 
+
 import React, { useState } from 'react';
 import Toast from './Toast';
 import '../app/globals.css';
-
-const WEBHOOK_URL = 'https://r3suprimentos.app.n8n.cloud/webhook/482345e7-09d6-460d-b7ab-17a176b73f0f';
+import { supabase } from '../lib/supabaseClient';
 
 function formatTelefone(value: string) {
   value = value.replace(/\D/g, '');
@@ -44,52 +44,40 @@ export default function Form() {
 
     setLoading(true);
 
-    // Divide o nome em firstName e lastName
-    const nomePartes = nome.trim().split(' ');
-    const firstName = nomePartes[0] || '';
-    const lastName = nomePartes.slice(1).join(' ') || '';
-
-    const payload = {
-      firstName,
-  lastName: lastName + ' - EVENTO',
-      phone: telefone,
+    // Monta o objeto para o Supabase
+    const lead = {
+      nome: nome.trim(),
+      telefone,
       empresa,
-      cnpj,
+      cnpj: cnpj ? cnpj.trim() : null,
       cargo,
       email,
-      produtos,
-      dataEnvio: new Date().toISOString(),
+      interesses: produtos,
+      source: 'landing-page', // ou outro valor se quiser customizar
     };
 
     try {
-      await fetch(WEBHOOK_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
+      const { error } = await supabase.from('leads').insert([lead]);
+
+      if (error) throw error;
 
       // Limpa os campos do form
-  setNome('');
-  setTelefone('');
-  setEmpresa('');
-  setCnpj('');
-  setCargo('');
-  setEmail('');
-  setProdutos('');
+      setNome('');
+      setTelefone('');
+      setEmpresa('');
+      setCnpj('');
+      setCargo('');
+      setEmail('');
+      setProdutos('');
       setLoading(false);
 
       // Mostra toast de sucesso
       setToastType('success');
       setToastMessage('Formulário enviado com sucesso! Aguarde nosso contato 😊');
       setToastShow(true);
-
-      // Fecha o toast depois de 3.5s
       setTimeout(() => setToastShow(false), 3500);
-
-    } catch {
+    } catch (err: any) {
       setLoading(false);
-
-      // Mostra toast de erro
       setToastType('error');
       setToastMessage('Erro ao enviar! Tente novamente.');
       setToastShow(true);
