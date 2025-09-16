@@ -76,7 +76,8 @@ export default function Form() {
       setToastMessage('Formulário enviado com sucesso! Aguarde nosso contato 😊');
       setToastShow(true);
       setTimeout(() => setToastShow(false), 3500);
-    } catch (err: any) {
+    } catch (err) {
+      console.error('Erro ao inserir lead no Supabase', err);
       setLoading(false);
       setToastType('error');
       setToastMessage('Erro ao enviar! Tente novamente.');
